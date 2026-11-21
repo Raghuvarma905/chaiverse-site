@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/index-BOFkCHbp.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BhR40Y9D.css">
+  <script type="module" crossorigin src="./assets/index-BNts5aJj.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BqyPgJT0.css">
 </head>
 <body>
   <!-- ============ LOADER ============ -->
@@ -89,7 +89,7 @@
         </div>
       </div>
       <div class="hero-badge" aria-hidden="true">
-        <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><text><textPath href="#circ">FRESHLY BREWED ✦ SERVED IN KULHAD ✦ SINCE 2026 ✦ </textPath></text></svg>
+        <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><text><textPath href="#circ" textLength="496" lengthAdjust="spacing">FRESHLY BREWED ✦ SERVED IN KULHAD ✦ SINCE 2026 ✦</textPath></text></svg>
         <span>☕</span>
       </div>
       <a href="#chai" class="scroll-cue" aria-label="Scroll"><span></span>Scroll to taste</a>
@@ -138,7 +138,7 @@
       </div>
     </section>
 
-    <section class="chapter" id="pizza" data-model="pizza" data-side="left">
+    <section class="chapter" id="pizza" data-model="none">
       <div class="container chapter-inner right">
         <div class="chapter-copy">
           <span class="chapter-no">03 / The Oven</span>
@@ -153,20 +153,18 @@
       </div>
     </section>
 
-    <section class="chapter chapter-burger" id="burger" data-model="burger" data-side="right">
+    <section class="chapter chapter-burger" id="burger" data-model="none">
       <div class="container chapter-inner left">
         <div class="chapter-copy">
           <span class="chapter-no">04 / The Stack</span>
           <h2 data-split>Built layer <em>by</em> layer.</h2>
-          <p class="reveal">Butter-toasted brioche, smashed patties with a lacy crust, real cheddar melt, crisp lettuce and vine tomatoes. Keep scrolling to watch it come apart.</p>
+          <p class="reveal">Butter-toasted brioche, a smashed patty with a lacy crust, a real cheddar melt, herb mayo and crisp lettuce. Keep scrolling to watch it come apart.</p>
           <ol class="layers reveal">
-            <li><b>01</b> Sesame brioche crown</li>
-            <li><b>02</b> Pickled red onion</li>
-            <li><b>03</b> Vine tomato</li>
-            <li><b>04</b> Iceberg lettuce</li>
-            <li><b>05</b> Aged cheddar ×2</li>
-            <li><b>06</b> Smashed patty ×2</li>
-            <li><b>07</b> Toasted heel</li>
+            <li><b>01</b> Butter-toasted brioche crown</li>
+            <li><b>02</b> Herb mayo</li>
+            <li><b>03</b> Cheddar melt on a smashed patty</li>
+            <li><b>04</b> Shredded lettuce &amp; burger sauce</li>
+            <li><b>05</b> Toasted brioche heel</li>
           </ol>
         </div>
       </div>
@@ -205,7 +203,7 @@
         <div class="sec-head">
           <span class="chapter-no">The Menu</span>
           <h2 data-split>Something for <em>every</em> craving.</h2>
-          <p class="reveal">Every item below is a live-rendered 3D model. Tap any card to spin it around.</p>
+          <p class="reveal">Every item below is a 3D model. Tap any card to spin it around.</p>
         </div>
         <div class="menu-bar">
           <div class="tabs" id="menuTabs" role="tablist"></div>
@@ -428,6 +426,14 @@
             <h3>Order placed!</h3>
             <p id="doneMsg"></p>
             <div class="eta"><span>Arriving in</span><b id="eta">28:00</b></div>
+            <div class="ride" aria-hidden="true">
+              <span class="road"></span>
+              <span class="rider">
+                <i class="puff"></i><i class="puff"></i>
+                <svg viewBox="0 0 64 40"><g class="scooter"><path d="M14 26h22l6-12h7" /><path d="M36 26l-6-12h-9" /><rect x="7" y="9" width="13" height="10" rx="2" class="box"/><path d="M49 14l2-6" /></g><g transform="translate(14 30)"><g class="wheel"><circle r="6"/><path d="M-6 0h12M0-6v12"/></g></g><g transform="translate(48 30)"><g class="wheel"><circle r="6"/><path d="M-6 0h12M0-6v12"/></g></g></svg>
+              </span>
+              <span class="pin"><svg viewBox="0 0 24 24"><path d="M12 22s7-7 7-12a7 7 0 0 0-14 0c0 5 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            </div>
             <button class="btn btn-ghost btn-sm" data-close-cart>Back to Chaiverse</button>
           </div>
         </div>
