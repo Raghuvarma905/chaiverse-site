@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chaiverse | Chai, Coffee & Kitchen in 3D</title>
+  <meta name="description" content="Hand-brewed chai, every style of coffee, stone-baked pizza and stacked burgers. An immersive 3D café experience." />
+  <meta name="theme-color" content="#0f0906" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./assets/index-BOFkCHbp.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BhR40Y9D.css">
+</head>
+<body>
+  <!-- ============ LOADER ============ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-cup">
+      <svg viewBox="0 0 120 120" class="loader-svg">
+        <defs>
+          <clipPath id="kulhadClip"><path d="M28 30 L92 30 L84 104 Q60 110 36 104 Z" /></clipPath>
+        </defs>
+        <g clip-path="url(#kulhadClip)">
+          <rect class="loader-fill" x="0" y="110" width="120" height="120" fill="#c98a4b" />
+          <path class="loader-wave" d="M0 0 Q15 -5 30 0 T60 0 T90 0 T120 0 T150 0 T180 0 T210 0 T240 0 V20 H0 Z" fill="#e0a868" />
+        </g>
+        <path d="M28 30 L92 30 L84 104 Q60 110 36 104 Z" fill="none" stroke="#e8a33d" stroke-width="2.5" stroke-linejoin="round" />
+        <path class="ls ls1" d="M48 22 q-6 -8 0 -14 q6 -6 0 -12" />
+        <path class="ls ls2" d="M60 22 q-6 -8 0 -14 q6 -6 0 -12" />
+        <path class="ls ls3" d="M72 22 q-6 -8 0 -14 q6 -6 0 -12" />
+      </svg>
+    </div>
+    <div class="loader-text">
+      <span class="loader-brand">Chaiverse</span>
+      <span class="loader-sub">Brewing your experience <b id="loaderPct">0</b>%</span>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"></span></div>
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="logo" data-magnetic>
+      <svg viewBox="0 0 40 40" class="logo-mark" aria-hidden="true"><path d="M9 13h22l-3 20q-8 3-16 0z" fill="#c65d33"/><path d="M9 13h22" stroke="#e8a33d" stroke-width="2.5" stroke-linecap="round"/><path d="M16 9q-2-3 0-5M21 9q-2-3 0-5M26 9q-2-3 0-5" stroke="#f3e6d3" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+      <span>Chai<em>verse</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#chai">Chai</a>
+      <a href="#coffee">Coffee</a>
+      <a href="#menu">Menu</a>
+      <a href="#atlas">Coffee Atlas</a>
+      <a href="#build">Build Yours</a>
+      <a href="#club">Club</a>
+      <a href="#stores">Stores</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost btn-sm hide-sm" data-goto="#menu" data-magnetic>Order now</button>
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart" data-magnetic>
+        <svg viewBox="0 0 24 24"><path d="M6 7h12l-1.2 11.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.8L6 7Z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="burger-menu" id="menuToggle" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#chai">Chai</a><a href="#coffee">Coffee</a><a href="#menu">Menu</a><a href="#atlas">Coffee Atlas</a><a href="#build">Build Yours</a><a href="#club">Club</a><a href="#stores">Stores</a>
+  </div>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero" data-model="kulhad" data-side="right">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="dot"></span>Chai · Coffee · Kitchen, since 2026</p>
+          <h1 class="hero-title" data-split>Every cup tells a <em>kahani.</em></h1>
+          <p class="hero-lead reveal">Hand-brewed chai, coffee in every style, stone-baked pizzas and burgers stacked high. Made fresh and served warm, now in three dimensions.</p>
+          <div class="hero-cta reveal">
+            <button class="btn btn-primary" data-goto="#menu" data-magnetic>Explore the menu <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button class="btn btn-ghost" data-goto="#build" data-magnetic>Build your chai</button>
+          </div>
+          <div class="hero-meta reveal">
+            <div><b>4.9</b><span>★ 38k reviews</span></div>
+            <div><b>22</b><span>chai blends</span></div>
+            <div><b>30+</b><span>coffee styles</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><text><textPath href="#circ">FRESHLY BREWED ✦ SERVED IN KULHAD ✦ SINCE 2026 ✦ </textPath></text></svg>
+        <span>☕</span>
+      </div>
+      <a href="#chai" class="scroll-cue" aria-label="Scroll"><span></span>Scroll to taste</a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <section class="marquee-band" data-model="keep" aria-hidden="true">
+      <div class="marquee m1"><div class="marquee-track">
+        <span>Masala Chai</span><i>✦</i><span>Espresso</span><i>✦</i><span>Cold Brew</span><i>✦</i><span>Paneer Tikka Pizza</span><i>✦</i><span>Smash Burger</span><i>✦</i><span>Filter Kaapi</span><i>✦</i><span>Kesar Chai</span><i>✦</i><span>Flat White</span><i>✦</i>
+      </div></div>
+      <div class="marquee m2"><div class="marquee-track">
+        <span>Bun Maska</span><i>✦</i><span>V60 Pour Over</span><i>✦</i><span>Vada Pav</span><i>✦</i><span>Irani Dum Chai</span><i>✦</i><span>Nitro Cold Brew</span><i>✦</i><span>Margherita</span><i>✦</i><span>Affogato</span><i>✦</i><span>Kashmiri Kahwa</span><i>✦</i>
+      </div></div>
+    </section>
+
+    <!-- ============ CHAPTERS ============ -->
+    <section class="chapter" id="chai" data-model="kulhad" data-side="left">
+      <div class="container chapter-inner right">
+        <div class="chapter-copy">
+          <span class="chapter-no">01 / The Ritual</span>
+          <h2 data-split>Chai, brewed the <em>slow</em> way.</h2>
+          <p class="reveal">Assam CTC simmered for four full minutes with spices pounded fresh every morning. Then poured from a height into a sun-baked clay kulhad that adds its own earthy perfume. 22 blends, zero shortcuts.</p>
+          <ul class="chips reveal">
+            <li>Masala</li><li>Adrak</li><li>Elaichi</li><li>Kesar</li><li>Tulsi</li><li>Irani Dum</li><li>Noon Chai</li><li>Sulaimani</li><li>Kahwa</li><li>Gur</li>
+          </ul>
+          <div class="facts reveal">
+            <div><b>4 min</b><span>simmer time</span></div>
+            <div><b>7</b><span>whole spices</span></div>
+            <div><b>100%</b><span>clay kulhads</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="coffee" data-model="cup" data-side="right">
+      <div class="container chapter-inner left">
+        <div class="chapter-copy">
+          <span class="chapter-no">02 / The Bean</span>
+          <h2 data-split>Coffee, <em>every</em> single way.</h2>
+          <p class="reveal">From a 20&nbsp;ml ristretto to an 18-hour cold brew. Single-estate Arabica from Chikmagalur and Coorg, roasted in small batches and dialled in every morning by our baristas.</p>
+          <ul class="chips reveal">
+            <li>Espresso</li><li>Ristretto</li><li>Lungo</li><li>Americano</li><li>Long Black</li><li>V60</li><li>Chemex</li><li>French Press</li><li>AeroPress</li><li>Moka</li><li>Turkish</li><li>Cold Brew</li><li>Nitro</li>
+          </ul>
+          <button class="btn btn-ghost reveal" data-goto="#atlas" data-magnetic>Open the Coffee Atlas →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter" id="pizza" data-model="pizza" data-side="left">
+      <div class="container chapter-inner right">
+        <div class="chapter-copy">
+          <span class="chapter-no">03 / The Oven</span>
+          <h2 data-split>Stone-baked at <em>400°C.</em></h2>
+          <p class="reveal">48-hour cold-fermented dough, hand-stretched to order. San Marzano tomatoes, fresh fior di latte, and Indian twists like tandoori paneer and peri peri, all in 90 seconds of fire.</p>
+          <div class="facts reveal">
+            <div><b>48 hr</b><span>fermented dough</span></div>
+            <div><b>90 s</b><span>bake time</span></div>
+            <div><b>12"</b><span>hand-stretched</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter chapter-burger" id="burger" data-model="burger" data-side="right">
+      <div class="container chapter-inner left">
+        <div class="chapter-copy">
+          <span class="chapter-no">04 / The Stack</span>
+          <h2 data-split>Built layer <em>by</em> layer.</h2>
+          <p class="reveal">Butter-toasted brioche, smashed patties with a lacy crust, real cheddar melt, crisp lettuce and vine tomatoes. Keep scrolling to watch it come apart.</p>
+          <ol class="layers reveal">
+            <li><b>01</b> Sesame brioche crown</li>
+            <li><b>02</b> Pickled red onion</li>
+            <li><b>03</b> Vine tomato</li>
+            <li><b>04</b> Iceberg lettuce</li>
+            <li><b>05</b> Aged cheddar ×2</li>
+            <li><b>06</b> Smashed patty ×2</li>
+            <li><b>07</b> Toasted heel</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats" data-model="none">
+      <div class="container stats-grid">
+        <div class="stat"><b data-count="1.2" data-suffix="M+" data-dec="1">0</b><span>cups poured</span></div>
+        <div class="stat"><b data-count="48">0</b><span>cafés in 9 cities</span></div>
+        <div class="stat"><b data-count="69" data-suffix="">0</b><span>items, all made fresh</span></div>
+        <div class="stat"><b data-count="4.9" data-dec="1">0</b><span>average rating</span></div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY (pinned horizontal) ============ -->
+    <section class="journey" id="journey" data-model="none">
+      <div class="journey-pin">
+        <div class="journey-head container">
+          <span class="chapter-no">From leaf to cup</span>
+          <h2>Five steps. <em>No shortcuts.</em></h2>
+        </div>
+        <div class="journey-track">
+          <article class="jcard"><span class="jnum">01</span><svg viewBox="0 0 64 64"><path d="M32 56C14 44 12 22 32 8c20 14 18 36 0 48Z"/><path d="M32 12v44"/></svg><h3>Pluck</h3><p>Two leaves and a bud, hand-picked at dawn from Assam and Nilgiri estates we buy from directly.</p></article>
+          <article class="jcard"><span class="jnum">02</span><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><path d="M20 32c4-8 20-8 24 0M20 32c4 8 20 8 24 0"/></svg><h3>Roll &amp; Roast</h3><p>Leaves are withered and CTC-rolled. Coffee cherries are sun-dried and roasted in 12&nbsp;kg batches.</p></article>
+          <article class="jcard"><span class="jnum">03</span><svg viewBox="0 0 64 64"><path d="M12 40h40l-4 14H16Z"/><path d="M32 40V14M24 20l8-8 8 8"/></svg><h3>Pound</h3><p>Ginger, cardamom, clove, cinnamon and pepper, hand-pounded in a brass imam-dasta every morning.</p></article>
+          <article class="jcard"><span class="jnum">04</span><svg viewBox="0 0 64 64"><path d="M10 26h44v6a22 22 0 0 1-44 0Z"/><path d="M24 18q-3-5 0-9M32 18q-3-5 0-9M40 18q-3-5 0-9"/></svg><h3>Brew</h3><p>Four-minute simmer for chai. 9-bar, 27-second shots for espresso. Timed, tasted, every batch.</p></article>
+          <article class="jcard"><span class="jnum">05</span><svg viewBox="0 0 64 64"><path d="M16 18h32l-4 34q-12 5-24 0Z"/><path d="M16 18h32"/></svg><h3>Serve</h3><p>Poured into a fresh clay kulhad or warmed ceramic, and handed over with a smile, in under 4 minutes.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="menu-sec" id="menu" data-model="none">
+      <div class="container">
+        <div class="sec-head">
+          <span class="chapter-no">The Menu</span>
+          <h2 data-split>Something for <em>every</em> craving.</h2>
+          <p class="reveal">Every item below is a live-rendered 3D model. Tap any card to spin it around.</p>
+        </div>
+        <div class="menu-bar">
+          <div class="tabs" id="menuTabs" role="tablist"></div>
+          <div class="menu-tools">
+            <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="menuSearch" type="search" placeholder="Search chai, pizza, latte…" /></label>
+            <label class="toggle"><input type="checkbox" id="vegOnly" /><span class="track"><span class="knob"></span></span>Veg only</label>
+          </div>
+        </div>
+        <p class="cat-note" id="catNote"></p>
+        <div class="menu-grid" id="menuGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ COFFEE ATLAS ============ -->
+    <section class="atlas" id="atlas" data-model="none">
+      <div class="container">
+        <div class="sec-head">
+          <span class="chapter-no">The Coffee Atlas</span>
+          <h2 data-split>Know your <em>cup.</em></h2>
+          <p class="reveal">24 coffees, deconstructed. Pick one to see exactly what goes inside, layer by layer.</p>
+        </div>
+        <div class="atlas-grid">
+          <div class="atlas-list">
+            <div class="atlas-filters" id="atlasFilters"></div>
+            <div class="atlas-items" id="atlasItems"></div>
+          </div>
+          <div class="atlas-stage">
+            <div class="vessel-wrap">
+              <div class="vessel-steam" id="vesselSteam"><span></span><span></span><span></span></div>
+              <div class="vessel" id="vessel"><div class="vessel-layers" id="vesselLayers"></div><div class="vessel-shine"></div></div>
+              <div class="vessel-labels" id="vesselLabels"></div>
+            </div>
+            <div class="atlas-info">
+              <span class="atlas-family" id="atlasFamily">Black</span>
+              <h3 id="atlasName">Espresso</h3>
+              <p id="atlasDesc"></p>
+              <dl class="atlas-specs">
+                <div><dt>Origin</dt><dd id="atlasOrigin"></dd></div>
+                <div><dt>Volume</dt><dd id="atlasMl"></dd></div>
+                <div><dt>Caffeine</dt><dd id="atlasCaf"></dd></div>
+                <div><dt>Served</dt><dd id="atlasTemp"></dd></div>
+              </dl>
+              <div class="meter"><span>Strength</span><div class="meter-bar"><i id="atlasStrength"></i></div></div>
+              <button class="btn btn-primary btn-sm" id="atlasOrder">Order this</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BUILD YOUR CHAI ============ -->
+    <section class="build" id="build" data-model="kulhad" data-side="right">
+      <div class="container build-inner">
+        <div class="builder">
+          <span class="chapter-no">Meri Wali Chai</span>
+          <h2 data-split>Build <em>your</em> chai.</h2>
+          <p class="reveal">Over 12,000 possible combinations. Watch your cup change colour as you go.</p>
+          <div class="builder-steps" id="builder"></div>
+          <div class="builder-foot">
+            <div>
+              <div class="blend-name" id="blendName">Regular Masala Chai</div>
+              <div class="blend-meta" id="blendMeta">180 ml · Assam CTC · Full cream</div>
+            </div>
+            <div class="blend-buy">
+              <b id="blendPrice">₹79</b>
+              <button class="btn btn-primary" id="blendAdd" data-magnetic>Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLUB ============ -->
+    <section class="club" id="club" data-model="none">
+      <div class="container">
+        <div class="sec-head center">
+          <span class="chapter-no">Kulhad Club</span>
+          <h2 data-split>Sip. Earn. <em>Repeat.</em></h2>
+          <p class="reveal">Earn 10 beans for every ₹100. Your 10th chai is always on us.</p>
+        </div>
+        <div class="tiers">
+          <article class="tier" data-tilt>
+            <div class="tier-glow"></div>
+            <span class="tier-badge">Tier 1</span>
+            <h3>Mitti</h3>
+            <p class="tier-req">Join free</p>
+            <ul><li>10 beans per ₹100</li><li>Free birthday chai</li><li>Member-only drops</li></ul>
+          </article>
+          <article class="tier featured" data-tilt>
+            <div class="tier-glow"></div>
+            <span class="tier-badge">Tier 2</span>
+            <h3>Pital</h3>
+            <p class="tier-req">500 beans / year</p>
+            <ul><li>1.25× beans</li><li>Free size upgrades</li><li>Skip-the-queue pickup</li><li>Monthly free snack</li></ul>
+          </article>
+          <article class="tier gold" data-tilt>
+            <div class="tier-glow"></div>
+            <span class="tier-badge">Tier 3</span>
+            <h3>Sona</h3>
+            <p class="tier-req">1,500 beans / year</p>
+            <ul><li>1.5× beans</li><li>Free delivery, always</li><li>Barista masterclasses</li><li>Early menu tastings</li></ul>
+          </article>
+        </div>
+        <div class="stamp-card reveal">
+          <div class="stamps" id="stamps"></div>
+          <div class="stamp-copy"><b>Your stamp card</b><span>Tap the cups to try it, and the 10th is free.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STORES ============ -->
+    <section class="stores" id="stores" data-model="none">
+      <div class="container">
+        <div class="sec-head">
+          <span class="chapter-no">Find us</span>
+          <h2 data-split>48 cafés. <em>One</em> recipe.</h2>
+        </div>
+        <div class="store-grid" id="storeGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section class="reviews" data-model="none">
+      <div class="marquee r1"><div class="marquee-track" id="reviewTrack"></div></div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="final-cta" data-model="kulhad" data-side="center">
+      <div class="container center">
+        <h2 class="final-title" data-split>Your chai is <em>waiting.</em></h2>
+        <p class="reveal">Delivery in 30 minutes, or pick up from the counter with zero wait.</p>
+        <div class="hero-cta reveal center">
+          <button class="btn btn-primary" data-goto="#menu" data-magnetic>Start an order</button>
+          <button class="btn btn-ghost" data-goto="#stores" data-magnetic>Find a café</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="logo"><svg viewBox="0 0 40 40" class="logo-mark" aria-hidden="true"><path d="M9 13h22l-3 20q-8 3-16 0z" fill="#c65d33"/><path d="M9 13h22" stroke="#e8a33d" stroke-width="2.5" stroke-linecap="round"/></svg><span>Chai<em>verse</em></span></a>
+        <p>Chai, coffee &amp; kitchen. Brewed with patience, served with love.</p>
+      </div>
+      <div><h4>Menu</h4><a href="#menu">Chai</a><a href="#menu">Coffee</a><a href="#menu">Pizza</a><a href="#menu">Burgers</a></div>
+      <div><h4>Explore</h4><a href="#atlas">Coffee Atlas</a><a href="#build">Build your chai</a><a href="#club">Kulhad Club</a><a href="#stores">Stores</a></div>
+      <div>
+        <h4>Newsletter</h4>
+        <form class="newsletter" id="newsletter"><input type="email" required placeholder="you@email.com" aria-label="Email" /><button class="btn btn-primary btn-sm">Join</button></form>
+        <p class="small">New blends, once a month. No spam.</p>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 Chaiverse. A demo concept.</span><span>Every visual on this site is rendered in real time with WebGL.</span></div>
+  </footer>
+
+  <!-- ============ PRODUCT MODAL ============ -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mName">
+      <button class="icon-btn modal-close" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="modal-view"><canvas id="viewer"></canvas><span class="drag-hint">⟲ Drag to rotate</span></div>
+      <div class="modal-body">
+        <span class="modal-cat" id="mCat"></span>
+        <h3 id="mName"></h3>
+        <p id="mDesc"></p>
+        <div class="opt-group" id="mSizes"></div>
+        <div class="modal-buy">
+          <div class="qty"><button data-q="-1" aria-label="Less">−</button><span id="mQty">1</span><button data-q="1" aria-label="More">+</button></div>
+          <button class="btn btn-primary" id="mAdd">Add · <span id="mPrice"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CART ============ -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-cart></div>
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <h3>Your order</h3>
+        <button class="icon-btn" data-close-cart aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="drawer-steps" id="drawerSteps">
+        <!-- step 1: cart -->
+        <div class="dstep active" data-step="cart">
+          <div class="mode-toggle" id="modeToggle"><button class="active" data-mode="delivery">Delivery</button><button data-mode="pickup">Pickup</button><i></i></div>
+          <div class="cart-items" id="cartItems"></div>
+          <div class="cart-empty" id="cartEmpty">
+            <svg viewBox="0 0 64 64"><path d="M16 18h32l-4 34q-12 5-24 0Z"/><path d="M16 18h32"/><path d="M26 12q-2-3 0-6M32 12q-2-3 0-6M38 12q-2-3 0-6"/></svg>
+            <p>Your kulhad is empty.</p>
+            <button class="btn btn-ghost btn-sm" data-close-cart data-goto="#menu">Browse the menu</button>
+          </div>
+          <div class="totals" id="totals">
+            <div><span>Subtotal</span><b id="tSub">₹0</b></div>
+            <div><span>GST (5%)</span><b id="tTax">₹0</b></div>
+            <div><span id="tFeeLabel">Delivery</span><b id="tFee">₹0</b></div>
+            <div class="grand"><span>Total</span><b id="tTotal">₹0</b></div>
+            <button class="btn btn-primary btn-block" id="toCheckout">Checkout</button>
+          </div>
+        </div>
+        <!-- step 2: details -->
+        <form class="dstep" data-step="details" id="checkoutForm">
+          <button type="button" class="back" data-back>← Back to cart</button>
+          <label>Name<input required name="name" autocomplete="name" placeholder="Your name" /></label>
+          <label>Phone<input required name="phone" type="tel" pattern="[0-9+ ]{10,14}" placeholder="98765 43210" /></label>
+          <label class="addr">Address<textarea name="address" rows="3" placeholder="Flat, street, area"></textarea></label>
+          <fieldset class="pay"><legend>Payment</legend>
+            <label><input type="radio" name="pay" value="upi" checked /> UPI</label>
+            <label><input type="radio" name="pay" value="card" /> Card</label>
+            <label><input type="radio" name="pay" value="cod" /> Cash</label>
+          </fieldset>
+          <p class="small">Demo checkout: no real payment is taken.</p>
+          <button class="btn btn-primary btn-block">Place order · <span id="tTotal2">₹0</span></button>
+        </form>
+        <!-- step 3: done -->
+        <div class="dstep" data-step="done">
+          <div class="done">
+            <svg viewBox="0 0 120 120" class="done-svg"><circle cx="60" cy="60" r="52"/><path d="M38 62l15 15 30-32"/></svg>
+            <h3>Order placed!</h3>
+            <p id="doneMsg"></p>
+            <div class="eta"><span>Arriving in</span><b id="eta">28:00</b></div>
+            <button class="btn btn-ghost btn-sm" data-close-cart>Back to Chaiverse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
